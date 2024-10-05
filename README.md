@@ -1,7 +1,6 @@
 # Issue
 I'm seeing the JSON output from resteasy-problem being truncated in the scenario when I make a rest call from one service to another service and that service throws an error (404 in this case).
 
-For example, I have a reproducer at: https://github.com/tmulle/quarkus-resteasy-problem-test
 
 I have a simulated `gateway` and `server` service in their respective projects.
 
