@@ -1,5 +1,6 @@
 package org.acme;
 
+import jakarta.ws.rs.BadRequestException;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.NotFoundException;
 import jakarta.ws.rs.POST;
@@ -33,5 +34,15 @@ public class GreetingResource {
     @POST
     public void throwNowFound() {
         throw new NotFoundException();
+    }
+
+    /**
+     * Simulate a POST that fails and throws a not found
+     * exception which could represent a missing entity, etc
+     */
+    @Path("/badRequest")
+    @POST
+    public void throwBadRequest() {
+        throw new BadRequestException("Your request was invalid");
     }
 }
