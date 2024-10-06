@@ -34,7 +34,7 @@ public interface MyRemoteService {
 
     @POST
     @Path("/badRequest")
-    void badReqeust();
+    void badRequest();
 
     @GET
     @Path("/hello")

@@ -42,5 +42,16 @@ public class GreetingResource {
     public void notFound() {
         remoteService.notFound();
     }
+
+    /**
+     * Call the remote service which will throw a BadRequest 
+     * error during processing simulating a record not being
+     * found
+     */
+    @Path("/badRequest")
+    @POST
+    public void badRequest() {
+        remoteService.badRequest();
+    }
     
 }
