@@ -81,15 +81,15 @@ public interface MyRemoteService {
                 return newProblem;
             } catch (Exception e) {
                 e.printStackTrace();
-                throw new RuntimeException(e);
+                return new RuntimeException(e);
             }
         }
 
         // This would be the normal handling of NON HttpProblem formatted messages
         switch (response.getStatus()) {
-            case 404: throw new NotFoundException(response);
-            case 400: throw new BadRequestException(response);
-            default: throw new ServerErrorException(response);
+            case 404: return new NotFoundException(response);
+            case 400: return new BadRequestException(response);
+            default: return new ServerErrorException(response);
         }
     }
 }
